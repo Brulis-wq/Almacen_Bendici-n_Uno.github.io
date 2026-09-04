@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es-SV">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almacén Bendición de Dios Uno — Ropa, calzado, bisutería, perfumes y más</title>
+<meta name="description" content="Almacén Bendición de Dios Uno: ropa, zapatos, bisutería, perfumes, muebles y enseres para el hogar, todo bajo un mismo techo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Sprite de iconos: dibujados a mano para cada departamento -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-ropa" viewBox="0 0 24 24">
+    <path d="M8.5 2.5 L4 5 L2 9 L5.5 10.8 L7 8.5 V21 H17 V8.5 L18.5 10.8 L22 9 L20 5 L15.5 2.5 Q15 5.5 12 5.5 Q9 5.5 8.5 2.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-zapatos" viewBox="0 0 24 24">
+    <path d="M2.5 16.5 V13.8 Q2.5 12.5 3.7 12 L8 10.2 Q9 8.5 10.6 8.7 L12.8 9 Q15.5 9.3 17.5 11.2 L20.3 13.8 Q21.5 15 21.5 16.5 V17.5 H2.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M8 10.2 L9 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M11 9.6 L12 12.4 M13.6 10.4 L14.4 13" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-bisuteria" viewBox="0 0 24 24">
+    <path d="M12 2.5 L9 6.5 H15 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M9 6.5 L4.5 8.8 L12 21.5 L19.5 8.8 L15 6.5 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M9 6.5 L12 11.2 L15 6.5 M4.5 8.8 L12 11.2 L19.5 8.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-perfumes" viewBox="0 0 24 24">
+    <rect x="9" y="10" width="6" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M10.3 10 V6.8 H13.7 V10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="10.8" y="3.2" width="2.4" height="2.6" rx="0.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <path d="M16 6.5 L18 5.3 M16.4 9 L18.6 8.6 M16 11.5 L18 12.4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-muebles" viewBox="0 0 24 24">
+    <path d="M5 11.5 V18.5 H19 V11.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M4 11.8 Q4 8.2 7.5 8.2 H16.5 Q20 8.2 20 11.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M5 15.5 H19 M6.2 18.5 V21 M17.8 18.5 V21" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-enseres" viewBox="0 0 24 24">
+    <path d="M4.5 10.5 H19.5 V15 Q19.5 19.5 12 19.5 Q4.5 19.5 4.5 15 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M2.5 10.5 H21.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M9.5 8.6 V10.5 M14.5 8.6 V10.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M10.3 4 Q9 5.6 10.3 6.8 M13.7 4 Q12.4 5.6 13.7 6.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+    <path d="M12 3.5c-4.7 0-8.5 3.8-8.5 8.5 0 1.5.4 3 1.1 4.2l-1.2 4.3 4.4-1.2c1.2.6 2.5 1 3.9 1 4.7 0 8.5-3.8 8.5-8.5S16.7 3.5 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M8.8 8.7c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .5.4.2.5.6 1.5.6 1.6.1.1.1.3 0 .4-.1.2-.2.3-.3.4-.1.2-.3.3-.4.5-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.2.3-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.9-.2 1.4-.3.6-1.5 1.1-2.1 1.2-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4Z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="icon-mapa" viewBox="0 0 24 24">
+    <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="12" cy="9.3" r="2.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="icon-reloj" viewBox="0 0 24 24">
+    <circle cx="12" cy="12.5" r="8.3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M12 7.5V13l3.6 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 2.5h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-carrito" viewBox="0 0 24 24">
+    <path d="M3 4h2.2l1 2.2M6.2 6.2h14L18.4 14H8.6L6.2 6.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="9.5" cy="19" r="1.5" fill="currentColor"/>
+    <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-cerrar" viewBox="0 0 24 24">
+    <path d="M5 5 L19 19 M19 5 L5 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-mas" viewBox="0 0 24 24">
+    <path d="M12 5 V19 M5 12 H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-menos" viewBox="0 0 24 24">
+    <path d="M5 12 H19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-basura" viewBox="0 0 24 24">
+    <path d="M4.5 7h15M9.5 7V4.8h5V7M6.5 7 7.3 20h9.4L17.5 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M10.3 10.5v6M13.7 10.5v6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header" id="inicio">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#inicio">
+      <span class="wordmark-linea1">Almacén</span>
+      <span class="wordmark-linea2">Bendición de Dios <em>Uno</em></span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" data-open="false">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#departamentos" class="nav-link">Departamentos</a>
+      <a href="#tienda" class="nav-link">Tienda</a>
+      <a href="#nosotros" class="nav-link">Nosotros</a>
+      <a href="#ubicacion" class="nav-link">Ubicación</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-carrito" id="btn-carrito" aria-label="Ver carrito de compras" aria-haspopup="dialog">
+        <svg width="20" height="20"><use href="#icon-carrito"></use></svg>
+        <span class="carrito-contador" id="carrito-contador" hidden>0</span>
+      </button>
+      <a class="btn btn-whatsapp" href="https://wa.me/50373458821" target="_blank" rel="noopener">
+        <svg width="18" height="18"><use href="#icon-whatsapp"></use></svg>
+        <span>Escríbenos</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HÉROE -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-texto" id="hero-texto">
+        <p class="hero-eyebrow">Ropa · zapatos · bisutería · perfumes · muebles · enseres del hogar</p>
+        <h1>Todo lo que tu casa y tu estilo necesitan, bajo un mismo techo.</h1>
+        <p class="hero-sub">Somos un almacén familiar donde encontrás desde el vestuario del día a día hasta lo necesario para amueblar y equipar tu hogar — con precios pensados para tu bolsillo y atención de vecinos, no de mostrador.</p>
+        <div class="hero-cta">
+          <a href="#departamentos" class="btn btn-primario">Ver departamentos</a>
+          <a href="https://wa.me/50373458821" target="_blank" rel="noopener" class="btn btn-fantasma">Preguntar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="toldo" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="sello-fundacion">
+          <svg viewBox="0 0 120 120" width="98" height="98" aria-hidden="true">
+            <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="60" cy="60" r="47" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.4 4"/>
+            <path id="curva-superior" d="M18,60 a42,42 0 0 1 84,0" fill="none"/>
+            <path id="curva-inferior" d="M22,66 a38,38 0 0 0 76,0" fill="none"/>
+            <text font-family="Karla, sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.5" fill="currentColor">
+              <textPath href="#curva-superior" startOffset="50%" text-anchor="middle">FUNDADO EN</textPath>
+            </text>
+            <text font-family="Karla, sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.5" fill="currentColor">
+              <textPath href="#curva-inferior" startOffset="50%" text-anchor="middle">SANTA TECLA</textPath>
+            </text>
+            <text x="60" y="67" font-family="Fraunces, serif" font-size="26" font-weight="600" text-anchor="middle" fill="currentColor">1996</text>
+          </svg>
+        </div>
+
+        <div class="hero-tarjetas">
+          <div class="mini-tarjeta mini-tarjeta--dorado">
+            <strong>6</strong>
+            <span>departamentos en un solo local</span>
+          </div>
+          <div class="mini-tarjeta mini-tarjeta--vino">
+            <strong>30 años</strong>
+            <span>sirviendo a familias de Santa Tecla</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTAMENTOS -->
+  <section class="departamentos" id="departamentos">
+    <div class="wrap">
+      <div class="seccion-titulo">
+        <h2>Nuestros departamentos</h2>
+        <p>Seis pasillos, un mismo compromiso: calidad a precio justo.</p>
+      </div>
+
+      <div class="grid-departamentos">
+
+        <article class="tarjeta-depto acento-vino">
+          <span class="pasillo">Pasillo 01</span>
+          <svg class="depto-icono" width="30" height="30"><use href="#icon-ropa"></use></svg>
+          <h3>Ropa</h3>
+          <p>Vestuario para toda la familia: casual, de trabajo y para ocasiones especiales, en tallas para niños y adultos.</p>
+        </article>
+
+        <article class="tarjeta-depto acento-verde">
+          <span class="pasillo">Pasillo 02</span>
+          <svg class="depto-icono" width="30" height="30"><use href="#icon-zapatos"></use></svg>
+          <h3>Zapatos</h3>
+          <p>Calzado para caminar la ciudad, el trabajo y la escuela: cómodo, resistente y con estilos para todas las edades.</p>
+        </article>
+
+        <article class="tarjeta-depto acento-dorado">
+          <span class="pasillo">Pasillo 03</span>
+          <svg class="depto-icono" width="30" height="30"><use href="#icon-bisuteria"></use></svg>
+          <h3>Bisutería</h3>
+          <p>Aretes, cadenas, anillos y accesorios para completar cualquier look, todos los días o en fechas especiales.</p>
+        </article>
+
+        <article class="tarjeta-depto acento-dorado">
+          <span class="pasillo">Pasillo 04</span>
+          <svg class="depto-icono" width="30" height="30"><use href="#icon-perfumes"></use></svg>
+          <h3>Perfumes</h3>
+          <p>Fragancias para él y para ella, de uso diario y de larga duración, a precios accesibles.</p>
+        </article>
+
+        <article class="tarjeta-depto acento-verde">
+          <span class="pasillo">Pasillo 05</span>
+          <svg class="depto-icono" width="30" height="30"><use href="#icon-muebles"></use></svg>
+          <h3>Muebles</h3>
+          <p>Piezas para equipar sala, comedor y dormitorio, pensadas para durar y acompañar a tu familia por años.</p>
+        </article>
+
+        <article class="tarjeta-depto acento-vino">
+          <span class="pasillo">Pasillo 06</span>
+          <svg class="depto-icono" width="30" height="30"><use href="#icon-enseres"></use></svg>
+          <h3>Enseres para el hogar</h3>
+          <p>Todo lo que necesita tu cocina y tu casa: utensilios, ollas, artículos de limpieza y más.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA / CATÁLOGO -->
+  <section class="tienda" id="tienda">
+    <div class="wrap">
+      <div class="seccion-titulo">
+        <h2>Nuestra tienda</h2>
+        <p>Elegí lo que necesitás, agregalo al carrito y armamos tu pedido por WhatsApp — sin pagos en línea, así de simple.</p>
+      </div>
+
+      <div class="filtros-tienda" id="filtros-tienda" role="tablist" aria-label="Filtrar productos por departamento">
+        <button class="filtro activo" data-filtro="todos" role="tab" aria-selected="true">Todos</button>
+        <button class="filtro" data-filtro="ropa" role="tab" aria-selected="false">Ropa</button>
+        <button class="filtro" data-filtro="zapatos" role="tab" aria-selected="false">Zapatos</button>
+        <button class="filtro" data-filtro="bisuteria" role="tab" aria-selected="false">Bisutería</button>
+        <button class="filtro" data-filtro="perfumes" role="tab" aria-selected="false">Perfumes</button>
+        <button class="filtro" data-filtro="muebles" role="tab" aria-selected="false">Muebles</button>
+        <button class="filtro" data-filtro="enseres" role="tab" aria-selected="false">Enseres</button>
+      </div>
+
+      <div class="grid-productos" id="grid-productos">
+        <!-- Las tarjetas de producto se generan con JavaScript desde script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS / CONFIANZA -->
+  <section class="nosotros" id="nosotros">
+    <div class="wrap nosotros-grid">
+      <div class="nosotros-texto">
+        <h2>Un almacén de Santa Tecla desde 1996</h2>
+        <p>Abrimos nuestras puertas en Santa Tecla en 1996 y desde entonces hemos crecido junto a la comunidad. Tres décadas después, seguimos con la misma idea de siempre: reunir ropa, calzado, accesorios, perfumería y lo esencial para el hogar en un mismo lugar, con precios claros y atención de puertas abiertas.</p>
+      </div>
+      <ul class="lista-confianza">
+        <li>
+          <h3>Calidad revisada</h3>
+          <p>Seleccionamos cada producto pensando en que rinda y dure, no solo en que se vea bien en el estante.</p>
+        </li>
+        <li>
+          <h3>Precios para la familia</h3>
+          <p>Trabajamos con márgenes justos para que equipar tu hogar o renovar tu clóset no rompa el presupuesto.</p>
+        </li>
+        <li>
+          <h3>Atención cercana</h3>
+          <p>Te conocemos por tu nombre, no por un número de recibo. Preguntá, cambiá de opinión, volvé cuando quieras.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="ubicacion" id="ubicacion">
+    <div class="wrap ubicacion-grid">
+      <div class="ubicacion-info">
+        <h2>Visitanos</h2>
+        <ul class="lista-info">
+          <li>
+            <svg width="20" height="20"><use href="#icon-mapa"></use></svg>
+            <div>
+              <strong>Dirección</strong>
+              <p><!-- Ajustar con la dirección exacta (colonia, calle y número) -->Santa Tecla, La Libertad — San Salvador</p>
+            </div>
+          </li>
+          <li>
+            <svg width="20" height="20"><use href="#icon-reloj"></use></svg>
+            <div>
+              <strong>Horario</strong>
+              <p>Lunes a sábado, 8:00 a.m. – 6:30 p.m.<br>Domingo, 8:00 a.m. – 12:00 p.m.</p>
+            </div>
+          </li>
+          <li>
+            <svg width="20" height="20"><use href="#icon-whatsapp"></use></svg>
+            <div>
+              <strong>WhatsApp / teléfono</strong>
+              <p>+503 7345-8821</p>
+            </div>
+          </li>
+        </ul>
+        <a class="btn btn-primario" href="https://wa.me/50373458821" target="_blank" rel="noopener">Escribinos y preguntá por un producto</a>
+      </div>
+
+      <div class="ubicacion-mapa">
+        <!-- Mapa referencial de Santa Tecla. Reemplazar el "q=" por la dirección exacta del local cuando la tengas. -->
+        <iframe
+          src="https://www.google.com/maps?q=Santa+Tecla,+La+Libertad,+El+Salvador&output=embed"
+          width="100%" height="100%" style="border:0;" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de Santa Tecla, San Salvador">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-marca">
+      <span class="wordmark-linea1">Almacén</span>
+      <span class="wordmark-linea2">Bendición de Dios <em>Uno</em></span>
+      <p>Ropa, zapatos, bisutería, perfumes, muebles y enseres para el hogar.</p>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#departamentos">Departamentos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+
+    <a class="btn btn-whatsapp" href="https://wa.me/50373458821" target="_blank" rel="noopener">
+      <svg width="18" height="18"><use href="#icon-whatsapp"></use></svg>
+      <span>Escribinos por WhatsApp</span>
+    </a>
+  </div>
+  <p class="footer-legal">© <span id="anio-actual">2026</span> Almacén Bendición de Dios Uno. Todos los derechos reservados.</p>
+</footer>
+
+<button class="volver-arriba" id="volver-arriba" aria-label="Volver arriba">↑</button>
+
+<!-- Fondo oscuro detrás del carrito -->
+<div class="carrito-fondo" id="carrito-fondo" hidden></div>
+
+<!-- Panel lateral del carrito -->
+<aside class="carrito-panel" id="carrito-panel" role="dialog" aria-modal="true" aria-label="Carrito de compras" hidden>
+  <div class="carrito-cabecera">
+    <h2>Tu carrito</h2>
+    <button class="carrito-cerrar" id="carrito-cerrar" aria-label="Cerrar carrito">
+      <svg width="20" height="20"><use href="#icon-cerrar"></use></svg>
+    </button>
+  </div>
+
+  <div class="carrito-lista" id="carrito-lista">
+    <!-- Se llena dinámicamente desde script.js -->
+  </div>
+
+  <div class="carrito-vacio" id="carrito-vacio">
+    <svg width="34" height="34"><use href="#icon-carrito"></use></svg>
+    <p>Todavía no agregás productos. Mirá la sección "Tienda" y empezá tu pedido.</p>
+  </div>
+
+  <div class="carrito-resumen" id="carrito-resumen">
+    <div class="carrito-total">
+      <span>Total estimado</span>
+      <strong id="carrito-total-monto">$0.00</strong>
+    </div>
+    <a class="btn btn-primario btn-ancho" id="carrito-pedir" href="#" target="_blank" rel="noopener">
+      <svg width="18" height="18"><use href="#icon-whatsapp"></use></svg>
+      <span>Pedir por WhatsApp</span>
+    </a>
+    <button class="carrito-vaciar" id="carrito-vaciar">Vaciar carrito</button>
+    <p class="carrito-nota">Los precios son referenciales. Confirmamos disponibilidad y total final por WhatsApp.</p>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
